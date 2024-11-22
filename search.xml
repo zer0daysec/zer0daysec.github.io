@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>如何安装 falco</title>
+      <link href="/2024/11/15/how-to-install-falco/"/>
+      <url>/2024/11/15/how-to-install-falco/</url>
+      
+        <content type="html"><![CDATA[<p>以下安装方式适用于 Debian 和 Ubuntu</p><p>添加 falcosecurity GPG 密钥</p><pre><code class="shell">curl -fsSL https://falco.org/repo/falcosecurity-packages.asc | sudo gpg --dearmor -o /usr/share/keyrings/falco-archive-keyring.gpg</code></pre><p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731655777333-cf4a7a3e-2466-451d-bb64-b454d3ae1c86.png/5Yeh5YehNjY2"></p><p>配置 apt 存储库</p><pre><code class="shell">echo &quot;deb [signed-by=/usr/share/keyrings/falco-archive-keyring.gpg] https://download.falco.org/packages/deb stable main&quot; | sudo tee -a /etc/apt/sources.list.d/falcosecurity.list</code></pre><p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731655897551-3f3a6ee1-7ee2-4bec-a80b-1f0ef214034f.png/5Yeh5YehNjY2"></p><p>更新包列表</p><pre><code class="shell">sudo apt-get update -y</code></pre><p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731656010547-5e5ee910-2e0d-4c64-8e96-e314073c5c84.png/5Yeh5YehNjY2"></p><p>安装构建内核模块和 eBPF 探针所需的一些依赖项，注意，如果想使用 Modern eBPF，则不需要安装以下依赖项：</p><pre><code class="shell">sudo apt install -y dkms make linux-headers-$(uname -r)sudo apt install -y clang llvmsudo apt install -y dialog</code></pre><p>安装 falco 包</p><pre><code class="shell">sudo apt-get install -y falco</code></pre><p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731656373956-b74a5e3a-6a90-4a9c-b163-3c9d431e2e87.png/5Yeh5YehNjY2"></p><p>官方推荐自动选择适合的驱动</p><p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731656413275-e1ecedab-95b8-4975-b6e0-1926e3541ccd.png/5Yeh5YehNjY2"></p><p>是否需要自动更新规则集服务，如果不需要选择 No，我这里选择 Yes</p><p>安装完成后查看 falco 启动的服务</p><pre><code class="shell">sudo systemctl status falco*</code></pre><p>可以看到安装完成后默认开启了两项服务</p><p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731656594640-cee68959-c648-4f2d-ac0a-940490a0a53e.png/5Yeh5YehNjY2"></p><p>有两项服务启动</p><ul><li>falco-modern-bpf.service</li><li>falcoctl-artifact-follow.service</li></ul><p>查看与 falco 有关的所有服务</p><pre><code class="shell">sudo systemctl list-unit-files &quot;falco*&quot;</code></pre><p>输出</p><p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731656649269-97534122-9d1c-4801-adf6-8e4371e8d117.png/5Yeh5YehNjY2"></p><p>生成一项可疑事件让 falco 捕获</p><pre><code class="shell">sudo cat /etc/shadow &gt; /dev/null</code></pre><p>结果可使用 journalctl 和在 &#x2F;var&#x2F;log&#x2F;syslog 中查看</p><pre><code class="shell"># 使用 journalctlsudo journalctl _COMM=falco -p warning# 使用 /var/log/syslogsudo grep Sensitive /var/log/syslog</code></pre><p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731657180687-a9d6b3f8-55c4-4598-9977-cefd804d2b46.png/5Yeh5YehNjY2"></p><p>falco 捕获到了这个危险操作行为。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> Tool </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> falco </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>恶意软件分析工具</title>
       <link href="/2024/10/08/malware-analysis-tools/"/>
       <url>/2024/10/08/malware-analysis-tools/</url>

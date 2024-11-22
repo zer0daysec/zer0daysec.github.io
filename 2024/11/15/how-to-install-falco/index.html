@@ -6,18 +6,20 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="expires" content="0">
   
-  <title>恶意软件分析工具 | Lliao&#39;s Blog</title>
+  <title>如何安装 falco | Lliao&#39;s Blog</title>
   <meta name="author" content="Lliao">
   
-  <meta name="description" content="静态分析Detect-It-Easy
-官网：https://github.com/horsicq/Detect-It-Easy
-PEStudio
-官网：https://www.winitor.com/"> 
+  <meta name="description" content="以下安装方式适用于 Debian 和 Ubuntu
+添加 falcosecurity GPG 密钥
+curl -fsSL https://falco.org/repo/falcosecurity-packages.asc | sudo gpg --dearmor -o /usr/share/keyrings/falco-archive-keyring.gpg
+
+
+配置 apt 存储库"> 
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="恶意软件分析工具"/>
+  <meta property="og:title" content="如何安装 falco"/>
   <meta property="og:site_name" content="Lliao&#39;s Blog"/>
 
   
@@ -109,7 +111,7 @@ PEStudio
 
 	
 		<div class="page-header">
-			<h1> 恶意软件分析工具</h1>
+			<h1> 如何安装 falco</h1>
 		</div>
 	
 
@@ -126,45 +128,58 @@ PEStudio
 	<div class="mypage">		
 	  		
 
-	  <h2 id="静态分析"><a href="#静态分析" class="headerlink" title="静态分析"></a>静态分析</h2><p>Detect-It-Easy</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://github.com/horsicq/Detect-It-Easy">https://github.com/horsicq/Detect-It-Easy</a></p>
-<p>PEStudio</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://www.winitor.com/">https://www.winitor.com/</a></p>
-<p>Capa</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://github.com/mandiant/capa">https://github.com/mandiant/capa</a></p>
-<p>Sysinternals Suite</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/sysinternals/downloads/sysinternals-suite">https://learn.microsoft.com/zh-cn/sysinternals/downloads/sysinternals-suite</a></p>
-<p>IDA Pro</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://hex-rays.com/ida-pro">https://hex-rays.com/ida-pro</a></p>
-<p>Ghidra</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://ghidra-sre.org/">https://ghidra-sre.org/</a></p>
-<p>Binary Ninja</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://binary.ninja/">https://binary.ninja/</a></p>
-<p>Malcat</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://malcat.fr/index.html">https://malcat.fr/index.html</a></p>
-<h2 id="动态分析"><a href="#动态分析" class="headerlink" title="动态分析"></a>动态分析</h2><p>x64dbg</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://x64dbg.com/">https://x64dbg.com/</a></p>
-<p>GDB</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://sourceware.org/gdb/">https://sourceware.org/gdb/</a></p>
-<p>PwnDBG</p>
-<p>pwndbg 是 gdb 的一款插件，让 gdb 调试变得更加简单。</p>
-<p>适用人员：初级软件开发人员、硬件黑客、逆向工程和漏洞开发利用人员。</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://github.com/pwndbg/pwndbg">https://github.com/pwndbg/pwndbg</a></p>
-<p>ScyllaHide</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://github.com/x64dbg/ScyllaHide">https://github.com/x64dbg/ScyllaHide</a></p>
-<h2 id="内存取证"><a href="#内存取证" class="headerlink" title="内存取证"></a>内存取证</h2><p>DFIRScience</p>
-<p>Volatility 框架</p>
-<h2 id="反混淆"><a href="#反混淆" class="headerlink" title="反混淆"></a>反混淆</h2><p>John Hammond - JScript 反混淆 WSHRAT</p>
-<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><p>CobaltStrike 配置提取器</p>
-<p><a target="_blank" rel="noopener" href="https://github.com/strozfriedberg/cobaltstrike-config-extractor">https://github.com/strozfriedberg/cobaltstrike-config-extractor</a></p>
-<p>分析 CobaltStrike beacons</p>
-<p>1768.py - <a target="_blank" rel="noopener" href="https://blog.didierstevens.com/my-software/#1768">https://blog.didierstevens.com/my-software/#1768</a></p>
-<p>Webcrack - JavaScript 反混淆器</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://github.com/j4k0xb/webcrack">https://github.com/j4k0xb/webcrack</a></p>
-<p>boxJS - JavaScript 逆向工程工具套件</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://github.com/CapacitorSet/box-js">https://github.com/CapacitorSet/box-js</a></p>
-<p>Mandiant Gootloader - 对一些更流行的 Gootloader 混淆模式进行反混淆</p>
-<p>官网：<a target="_blank" rel="noopener" href="https://github.com/mandiant/gootloader">https://github.com/mandiant/gootloader</a></p>
+	  <p>以下安装方式适用于 Debian 和 Ubuntu</p>
+<p>添加 falcosecurity GPG 密钥</p>
+<pre><code class="shell">curl -fsSL https://falco.org/repo/falcosecurity-packages.asc | sudo gpg --dearmor -o /usr/share/keyrings/falco-archive-keyring.gpg
+</code></pre>
+<p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731655777333-cf4a7a3e-2466-451d-bb64-b454d3ae1c86.png/5Yeh5YehNjY2"></p>
+<p>配置 apt 存储库</p>
+<pre><code class="shell">echo &quot;deb [signed-by=/usr/share/keyrings/falco-archive-keyring.gpg] https://download.falco.org/packages/deb stable main&quot; | sudo tee -a /etc/apt/sources.list.d/falcosecurity.list
+</code></pre>
+<p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731655897551-3f3a6ee1-7ee2-4bec-a80b-1f0ef214034f.png/5Yeh5YehNjY2"></p>
+<p>更新包列表</p>
+<pre><code class="shell">sudo apt-get update -y
+</code></pre>
+<p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731656010547-5e5ee910-2e0d-4c64-8e96-e314073c5c84.png/5Yeh5YehNjY2"></p>
+<p>安装构建内核模块和 eBPF 探针所需的一些依赖项，注意，如果想使用 Modern eBPF，则不需要安装以下依赖项：</p>
+<pre><code class="shell">sudo apt install -y dkms make linux-headers-$(uname -r)
+sudo apt install -y clang llvm
+sudo apt install -y dialog
+</code></pre>
+<p>安装 falco 包</p>
+<pre><code class="shell">sudo apt-get install -y falco
+</code></pre>
+<p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731656373956-b74a5e3a-6a90-4a9c-b163-3c9d431e2e87.png/5Yeh5YehNjY2"></p>
+<p>官方推荐自动选择适合的驱动</p>
+<p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731656413275-e1ecedab-95b8-4975-b6e0-1926e3541ccd.png/5Yeh5YehNjY2"></p>
+<p>是否需要自动更新规则集服务，如果不需要选择 No，我这里选择 Yes</p>
+<p>安装完成后查看 falco 启动的服务</p>
+<pre><code class="shell">sudo systemctl status falco*
+</code></pre>
+<p>可以看到安装完成后默认开启了两项服务</p>
+<p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731656594640-cee68959-c648-4f2d-ac0a-940490a0a53e.png/5Yeh5YehNjY2"></p>
+<p>有两项服务启动</p>
+<ul>
+<li>falco-modern-bpf.service</li>
+<li>falcoctl-artifact-follow.service</li>
+</ul>
+<p>查看与 falco 有关的所有服务</p>
+<pre><code class="shell">sudo systemctl list-unit-files &quot;falco*&quot;
+</code></pre>
+<p>输出</p>
+<p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731656649269-97534122-9d1c-4801-adf6-8e4371e8d117.png/5Yeh5YehNjY2"></p>
+<p>生成一项可疑事件让 falco 捕获</p>
+<pre><code class="shell">sudo cat /etc/shadow &gt; /dev/null
+</code></pre>
+<p>结果可使用 journalctl 和在 &#x2F;var&#x2F;log&#x2F;syslog 中查看</p>
+<pre><code class="shell"># 使用 journalctl
+sudo journalctl _COMM=falco -p warning
+
+# 使用 /var/log/syslog
+sudo grep Sensitive /var/log/syslog
+</code></pre>
+<p><img src="https://bd-1251526205.cos.ap-beijing.myqcloud.com/uploads/2024/11/1731657180687-a9d6b3f8-55c4-4598-9977-cefd804d2b46.png/5Yeh5YehNjY2"></p>
+<p>falco 捕获到了这个危险操作行为。</p>
 
 	</div>
 
@@ -177,13 +192,13 @@ PEStudio
 
     
     
-    <a href="/2024/11/15/how-to-install-falco/" type="button" class="btn btn-default"><i
-                class="fa fa-arrow-circle-o-left"></i> 上一页</a>
+    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>上一页</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
     
-    <a type="button" class="btn btn-default disabled">下一页<i class="fa fa-arrow-circle-o-right"></i></a>
+    <a href="/2024/10/08/malware-analysis-tools/" type="button" class="btn btn-default ">下一页<i
+                class="fa fa-arrow-circle-o-right"></i></a>
     
 
     
@@ -216,7 +231,7 @@ PEStudio
 	
 	<div class="meta-widget">
 	<i class="fa fa-clock-o"></i>
-	2024-10-08 
+	2024-11-15 
 	</div>
 	
 
@@ -240,19 +255,13 @@ PEStudio
 	<a data-toggle="collapse" data-target="#tags"><i class="fa fa-tags"></i></a>		  
     <ul id="tags" class="tag_box list-unstyled collapse in">	  
 	    
-  <li><a href="/tags/Tool/">Tool<span>1</span></a></li>
+  <li><a href="/tags/falco/">falco<span>1</span></a></li>
     </ul>
 	</div>
 		
 
 	<!-- toc -->
 	<div class="meta-widget">
-	
-	   <a data-toggle="collapse" data-target="#toc"><i class="fa fa-bars"></i></a>
-	   <div id="toc" class="toc collapse in">
-		   <span class="toc-title">Contents</span>
-			<ol class="toc-article"><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E9%9D%99%E6%80%81%E5%88%86%E6%9E%90"><span class="toc-article-text">静态分析</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%8A%A8%E6%80%81%E5%88%86%E6%9E%90"><span class="toc-article-text">动态分析</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%86%85%E5%AD%98%E5%8F%96%E8%AF%81"><span class="toc-article-text">内存取证</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%8F%8D%E6%B7%B7%E6%B7%86"><span class="toc-article-text">反混淆</span></a></li><li class="toc-article-item toc-article-level-2"><a class="toc-article-link" href="#%E5%85%B6%E5%AE%83"><span class="toc-article-text">其它</span></a></li></ol>
-		</div>
 	
 	</div>
 	
